@@ -14,9 +14,10 @@ COPY .python-version .
 
 # Copy project files
 COPY notebooks/* notebooks/
+COPY src/* src/
 
 # Install dependencies with uv
 RUN uv sync
 
 # run main.py inside the notebooks folder
-CMD ["uv", "run", "python", "notebooks/main.py"]
+CMD ["uv", "run", "python", "src/main.py"]
